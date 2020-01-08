@@ -51,7 +51,7 @@
     \tableofcontents
     \chapter{Introduction}
         \section{Entreprise}
-            \tab{} Versusmind est une entreprise de consultation informatique, elle est découpée en plusieurs agences, Nancy (centre), Metz, Strasbourg, Paris, Luxembourg.\newline
+            \tab{} Versusmind est un cabinet d'architecture numérique, elle est découpée en plusieurs agences, Nancy (centre), Metz, Strasbourg, Paris, Luxembourg.\newline
             Elle compte aujourd'hui X employés. Elle fournit aux entreprises une expertise ainsi que la réalisation leurs projets.
             \TODO{}
         \section{Projet}
@@ -106,23 +106,6 @@
                 \subsubsection{Rétrospective}
                     Et enfin, encore une fois avec le Scrum Master ainsi que les développeurs, on discute de comment s'est déroulé le dernier sprint, des pratiques qu'on pourrait mettre en place ou améliorer, mais aussi de comment on l'a vécu et ressenti.\newline
                     Cela s'inscrit dans un objectif d'amélioration de l'environnement de travail et de l'efficacité.
-        \section{Développement dirigé par les tests (TDD)}
-            Durant mon stage, j'ai appris à implémenter des tests afin de subvenir à plusieurs besoins\@:
-            \begin{enumerate}
-                \item Fournir une preuve de fonctionnement du code testé
-                \item Prévenir d'éventuels bugs futurs
-                \item S'assurer du bon fonctionnement de l'application avant son déploiement
-            \end{enumerate}
-            Afin de s'assurer de cela, on a défini le comportement unitaire de chaque composant, ainsi qu'un ou plusieurs parcours d'utilisation critiques utilisant les éléments clés de l'application.\newline
-            Et dans une démarche d'intégration continue j'ai participé à la mise en place de systèmes de tests et de déploiement automatisés sur la plateforme Azure.\newline
-                J'ai pu utiliser la solution SonarQube qui s'occupe d'analyser le dépôt de code source afin d'y trouver des problèmes de sécurité, des bugs, des mauvaises pratique ainsi que de la duplication de code.\newline
-                Cela contribue a rendre le code plus stable et plus maintenable.\newline
-                J'ai eu l'occasion de créer différents types de tests\@:
-                \begin{description}
-                    \item [Les tests unitaires] s'assurent que chaque composant de l'application rempli son rôle.
-                    \item [Les tests d'intégrations] vérifient un fonctionnement comportant plusieurs composants.
-                    \item [Les test de bout en bout] implémentent des scénario complet, utilisant toutes les couches de l'application.
-                \end{description}
         \section{Architecture}
             \TODO{<Inserer le schéma global>}
             \subsection{Front-end}
@@ -150,6 +133,23 @@
                 On sérialise les consentements avant les envoyer, il seront désérialisés en arrivant dans la fonction Azure, et la même chose se produira dans l'autre sens une fois la signature récupérée pour être enregistrée en base par le back-end.\newline
 
                 Le fait de paralléliser les traitements nous offre une puissance explosive, plus le nombre de requêtes augmente, plus il y a de serveurs dynamiquement déployés par Azure.\newline
+        \section{Développement dirigé par les tests (TDD)}
+            Durant mon stage, j'ai appris à implémenter des tests afin de subvenir à plusieurs besoins\@:
+            \begin{enumerate}
+                \item Fournir une preuve de fonctionnement du code testé
+                \item Prévenir d'éventuels bugs futurs
+                \item S'assurer du bon fonctionnement de l'application avant son déploiement
+            \end{enumerate}
+            Afin de s'assurer de cela, on a défini le comportement unitaire de chaque composant, ainsi qu'un ou plusieurs parcours d'utilisation critiques utilisant les éléments clés de l'application.\newline
+            Et dans une démarche d'intégration continue j'ai participé à la mise en place de systèmes de tests et de déploiement automatisés sur la plateforme Azure.\newline
+                J'ai pu utiliser la solution SonarQube qui s'occupe d'analyser le dépôt de code source afin d'y trouver des problèmes de sécurité, des bugs, des mauvaises pratique ainsi que de la duplication de code.\newline
+                Cela contribue a rendre le code plus stable et plus maintenable.\newline
+                J'ai eu l'occasion de créer différents types de tests\@:
+                \begin{description}
+                    \item [Les tests unitaires] s'assurent que chaque composant de l'application rempli son rôle.
+                    \item [Les tests d'intégrations] vérifient un fonctionnement comportant plusieurs composants.
+                    \item [Les test de bout en bout] implémentent des scénario complet, utilisant toutes les couches de l'application.
+                \end{description}
     \chapter{Conclusion}
         \TODO{}
 	\makeutbmbackcover{}
