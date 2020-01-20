@@ -26,7 +26,7 @@
 % utbmcovers configuration
 %----------------------------------------
 
-\setutbmfrontillustration{utbm_default_illustration}
+\setutbmfrontillustration{versusmind.png}
 \setutbmtitle{Développement d’une plateforme de recueuil de consentements RGPD}
 \setutbmsubtitle{Rapport de stage ST50 \hyp{} A2019}
 \setutbmstudent{Nicolas BALLET}
@@ -46,14 +46,15 @@
 
 \begin{document}
 	\makeutbmfrontcover{}
-        \TODO{Je tiens tout d'abord à remercier\ldots}
+        Je tiens tout d'abord à remercier Versusmind et l'UTBM pour m'avoir donné l'opportunité d'effectuer ce stage.\newline\newline
+        Philippe Didiergeorges pour m'avoir suivi et guidé durant mon stage.\newline\newline
+        Rémi Benoit et Jacques Lorentz pour m'avoir aidé et épaulé au sein de l'équipe durant ma formation.
     \newpage
     \tableofcontents
     \chapter{Introduction}
         \section{Entreprise}
             \tab{} Versusmind est un cabinet d'architecture numérique, elle est découpée en plusieurs agences, Nancy (centre), Metz, Strasbourg, Paris, Luxembourg.\newline
-            Elle compte aujourd'hui X employés. Elle fournit aux entreprises une expertise ainsi que la réalisation leurs projets.
-            \TODO{}
+            Elle compte aujourd'hui environ 200 employés. Elle fournit aux entreprises une expertise ainsi que la réalisation leurs projets.
         \section{Projet}
             \subsection{Contexte}
                 \tab{} Adopté par l’Union Européenne en avril 2016, la date d’application du RGPD est le 25 mai 2018. Celui-ci oblige les entreprises à identifier les données personnelles en leur possession ainsi que leurs modalités de traitement et de protection et a pour objectifs de\@:
@@ -66,7 +67,7 @@
                 Il est donc important pour les entreprises d'être en conformité avec le RGPD.\newline
                 Mais faire migrer son système d'information pouvant coûter cher, Versusmind propose une solution nommée Central Consent Manager.
             \subsection{Central Consent Manager (CCM)}
-                \tab{} CCM est système de gestion des consentements centralisé qui va permettre aux entreprises de se libérer d'un poids en s'assurant que ses utilisateurs ont bien consentis à l'utilisation de leurs données personnelles en centralisant l'enregistrement et la vérification d'authenticité des consentements.\newline
+                \tab{} CCM est système de gestion des consentements centralisé qui va permettre aux entreprises de se libérer d'un poids en s'assurant que ses utilisateurs ont bien consentis à l'utilisation de leurs données personnelles en centralisant l'enregistrement et la vérification d'authenticité des consentements.
                 \begin{center}
                     \includegraphics[width=0.8\textwidth]{ccm.png}
                 \end{center}
@@ -78,8 +79,7 @@
                     \item Enregistrement du consentement
                 \end{enumerate}
             \subsection{Ma mission}
-                \tab{} Dans une équipe de développeurs qui évolue beaucoup, mon rôle a été d'aider au développement de la plateforme CCM, à sa mise en production et à améliorer ses performances.\newline
-                \TODO{}
+                \tab{} Dans une équipe de développeurs qui évolue beaucoup, mon rôle a été d'aider au développement de la plateforme CCM, à sa mise en production et à améliorer ses performances.
     \chapter{Développement}
         \section{Méthodologie Scrum}
             J'ai été intégré durant mon stage à une équipe utilisant la méthodologie Scrum, qui fait partie des méthodes de gestion de projet agiles. Cela vise à supprimer ou au moins à réduire l'effet tunnel d'une méthode de gestion classique.\newline
@@ -88,11 +88,11 @@
             Cela permet de rester concentré sur les aspects importants et de ne pas développer de fonctionnalités qui ne seront jamais utilisées.\newline
             Un Scrum Master est assigné au projet, son rôle est d'aider l'équipe à bien suivre un fonctionnement agile ainsi qu'a s'organiser, il est aussi là pour guider le client dans la rédaction des scénarios.
             \begin{center}
-                \includegraphics[width=\textwidth]{scrum.jpg}
+                \includegraphics[width=0.9\textwidth]{scrum.jpg}
             \end{center}
             \subsection{Réunions journalières (Daily)}
-                Chaque matin nous avions une petite réunion qui ne doit pas dépasser 15min afin d'informer rapidement le reste de l'équipe de l'avancement des différentes taches, de discuter brièvement des différents problèmes rencontrés mais aussi de choisir ensemble la priorité des différentes taches qu'il reste à faire.\newline
-                Cela permet de rester toujours conscient de l'état du projet et d'avoir une vision d'ensemble du travail accompli et du travail restant.
+                Chaque matin nous avons une petite réunion qui ne doit pas dépasser 15min afin d'informer rapidement le reste de l'équipe de l'avancement des différentes taches, de discuter brièvement des différents problèmes rencontrés mais aussi de choisir ensemble la priorité des différentes taches qu'il reste à faire.\newline
+                Cela permet de toujours rester conscient de l'état du projet et d'avoir une vision d'ensemble du travail accompli et du travail restant.
             \subsection{Réunions inter-sprints}
                 Entre chaque sprint, une série de réunions nous permet de rester dans la bonne direction concernant le développement du projet.
                 \subsubsection{Revue de sprint}
@@ -112,11 +112,11 @@
             La solution CCM est composée de différents éléments:
             \begin{itemize}
                 \item Une partie Font-end écrite en HTML/CSS/Typescript avec le framework Angular, c'est le back-office d'administration, il sert les différentes pages web à l'utilisateur.
-                \item Une partie Back-end écrite en Java avec le framework Spring Boot, c'est le cœur de l'application, elle peut recevoir des requêtes du Front-end ou directement par API
+                \item Une partie Back-end écrite en Java avec le framework Spring Boot, c'est le cœur de l'application, elle peut recevoir des requêtes via le Front-end ou directement par API
                 \item La gestion du chiffrement est en deux parties
                     \begin{itemize}
                         \item Une instance EBJCA qui prends le rôle d'autorité de certification
-                        \item Des fonctions Azure écrite en Java qui chiffrent et vérifient les consentements. Elles communiquent avec le Back-end via des Service Bus Azure (de simples files d'attentes de messages JSON)
+                        \item Des Fonctions Azure écritent en Java qui chiffrent et vérifient les consentements. Elles communiquent avec le Back-end via des Service Bus Azure (de simples files d'attentes de messages JSON)
                     \end{itemize}
                 \item Une instance Redis afin de garder du cache des différentes requêtes faites à la base de données.
             \end{itemize}
@@ -124,20 +124,31 @@
             \subsection{Front-end}
                 \tab{} Je suis arrivé sur la fin d'une saison de refonte graphique.
                 J'ai commencé mon stage en me formant sur l'utilisation du framework Angular sur lequel je suis maintenant à l'aise.
-                J'ai pu ensuite aider à la fermeture de cette saison en apportant mes connaissances et mon expérience à l'équipe.\newline
-                Aussi, tout au long de mon stage, j'ai pu faire de la veille et guider l'équipe vers une restructuration de l'architecture CSS plus maintenable et plus facile à étendre.
+                J'ai pu ensuite aider à la fermeture d'une saison de refonte graphique en apportant mes connaissances et mon expérience en intégration web à l'équipe.\newline
+                J'ai aussi participé à l'amélioration et à l'enrichissement de l'interface sur toute le reste de mon stage.
+                Aussi, tout au long de ma formation, j'ai pu faire de la veille et guider l'équipe vers une restructuration de l'architecture CSS plus maintenable et plus facile à étendre.\newline
+                \includegraphics[width=\linewidth]{dashboard.png}
             \subsection{Back-end}
-                J'ai contribué au développement du back-end du projet, sous forme d'ajout de fonctionnalités, correction de faille de sécurité, correction de bugs, etc\ldots\newline
+                J'ai contribué au développement du back-end du projet, sous forme d'ajout de fonctionnalités, correction de faille de sécurité, correction de bugs, etc\ldots
             \subsection{Gestion du cache}
                 Je n'ai pas touché au développement de la gestion du cache côté serveur, mais j'ai participé aux discussions et aidé à la prise de décisions.
                 Nous avons fait face à un problème de mise à jour des données présentes à la fois dans la base de données et dans le cache. La solution vers laquelle nous nous somme orientés est de simplifier les requêtes faites en base pour unifier la récupération des données (abstraire le cache et la base de données) et de filtrer les données dans une couche applicative.
             \subsection{Certification numérique}
+                J'ai eu à déployer une instance EJBCA assignée à l'instance de production de la plateforme CCM.\newline
+                Cela comporte de la génération de clés cryptographiques, mais aussi de la manipulation de la plateforme Azure et du stockage de mots de passe sensibles car liés à la production.
             \subsection{Montée en charge}
-                \tab{} Suite à la refonte graphique, nous sommes entrés dans une saison de mise en production.\newline
-                Une problématique de performances est apparue assez vite. Lorsqu'un nouveau client veux migrer vers CCM, une base de consentements potentiellement conséquente doit être importée. \newline
-                Suite à des tests de charge, nous avons observer qu'il faudrait environ 3 jours pour importer une base d'un million de consentements. Et plusieurs heures pour générer un export des consentements enregistrés. Ce n'était pas acceptable.\newline
-                J'ai eu la responsabilité d'implémenter les fonctions Azure afin de paralléliser chaque création de signature numérique.
-                Le fait de paralléliser les traitements nous offre une puissance explosive. Plus le nombre de requêtes augmente, plus il y a de serveurs dynamiquement déployés par Azure.\newline
+                \tab{} Suite à la refonte graphique, nous sommes entrés dans une saison de mise en production et deux problématiques de performances sont apparues assez vite:
+                \begin{itemize}
+                \item Lorsqu'un nouveau client veux migrer vers CCM, une base de consentements potentiellement conséquente doit être importée.
+                \item Un client doit pouvoir exporter cette base sous forme de fichier, ce qui implique une vérification de validité d'un grand nombre de consentements.
+                \end{itemize}
+
+                Suite à des tests de charge, nous avons observé qu'il faudrait environ 3 jours pour importer une base d'un million de consentements. Et plusieurs heures pour générer un export des consentements enregistrés. Ce n'était pas acceptable.
+                \subsubsection{Signature}
+                J'ai eu la responsabilité d'implémenter les fonctions Azure afin de paralléliser chaque création de signature numérique.\newline
+                Dans la même tâche, j'ai pu implémenter la révocation de consentement en utilisant aussi des fonctions Azures.
+                \subsubsection{Verification}
+                J'ai aussi eu à travailler sur la vérification des consentements et j'ai pu diviser le temps de signature par 2 tout en augmentant drastiquement le niveau de sécurité.
         \section{Développement dirigé par les tests (TDD)}
             Durant mon stage, j'ai appris à implémenter des tests afin de subvenir à plusieurs besoins\@:
             \begin{enumerate}
@@ -147,8 +158,8 @@
             \end{enumerate}
             Afin de s'assurer de cela, on a défini le comportement unitaire de chaque composant, ainsi qu'un ou plusieurs parcours d'utilisation critiques utilisant les éléments clés de l'application.\newline
             Et dans une démarche d'intégration continue j'ai participé à la mise en place de systèmes de tests et de déploiement automatisés sur la plateforme Azure.\newline
-                J'ai pu utiliser la solution SonarQube qui s'occupe d'analyser le dépôt de code source afin d'y trouver des problèmes de sécurité, des bugs, des mauvaises pratique ainsi que de la duplication de code.\newline
-                Cela contribue a rendre le code plus stable et plus maintenable.\newline
+                J'ai pu utiliser la solution SonarQube pour le Back-end et Eslint pour le Front-end qui s'occupent d'analyser le dépôt de code source afin d'y trouver des problèmes de sécurité, des bugs, des mauvaises pratique ainsi que de la duplication de code.\newline
+                Cela contribue à rendre le code plus stable et plus maintenable.\newline
                 J'ai eu l'occasion de créer différents types de tests\@:
                 \begin{description}
                     \item [Les tests unitaires] s'assurent que chaque composant de l'application rempli son rôle.
@@ -156,6 +167,8 @@
                     \item [Les test de bout en bout] implémentent des scénario complet, utilisant toutes les couches de l'application.
                 \end{description}
     \chapter{Conclusion}
-        \TODO{}
+        Ce stage m'a beaucoup apporté, d'un point de vue technique mais aussi au niveau organisationnel.\newline
+        J'y ai appris à suivre un processus de développement plus stable, grâce au développement dirigé par les tests ainsi qu'a l'intégration continue via Azure.\newline
+        J'ai aussi appris à développer des tests de charge, à interpréter leurs résultats afin d'en tirer des directions à prendre.\newline
 	\makeutbmbackcover{}
 \end{document}
