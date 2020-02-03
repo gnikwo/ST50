@@ -27,7 +27,7 @@
 %----------------------------------------
 
 \setutbmfrontillustration{versusmind.png}
-\setutbmtitle{Développement d’une plateforme de recueuil de consentements RGPD}
+\setutbmtitle{Développement d’une plateforme de recueil de consentements RGPD}
 \setutbmsubtitle{Rapport de stage ST50 \hyp{} A2019}
 \setutbmstudent{Nicolas BALLET}
 \setutbmstudentdepartment{Département Génie Informatique}
@@ -38,7 +38,7 @@
 \setutbmcompanytutor{Philippe Didiergeorges}
 \setutbmschooltutor{Vincent Hilaire}
 \setutbmkeywords{RGPD \hyp{} Consentement \hyp{} Signature numérique \hyp{} Plateforme Azure \hyp{} Méthodologie Scrum \hyp{} Cloud \newline Angular \hyp{} Spring Boot \hyp{} Azure Functions}
-\setutbmabstract{<RÉSUMÉ>}
+\setutbmabstract{\TODO{Résumé}}
 
 %----------------------------------------
 % document
@@ -75,7 +75,7 @@
                 \begin{enumerate}
                     \item Requête sur le service de mentions pour un traitement
                     \item Envoi des mentions d'informations
-                    \item Envoi d'un e-mail de confirmation (vérification d'identité minimale)
+                    \item Demande de consentement (sous forme d'e-mail ou autre)
                     \item Confirmation
                     \item Enregistrement du consentement
                 \end{enumerate}
@@ -182,6 +182,7 @@
         Ce stage m'a beaucoup apporté, d'un point de vue technique mais aussi au niveau organisationnel.\newline
         J'y ai appris à suivre un processus de développement plus stable, grâce au développement dirigé par les tests ainsi qu'a l'intégration continue via Azure DevOps.\newline
         J'ai aussi appris à développer des tests de charge, à interpréter leurs résultats afin d'en tirer des directions à prendre.\newline
+    \makeutbmbackcover{}
     \appendix
     \chapter{Personas}
         Les différents rôles dans l'application:
@@ -193,6 +194,7 @@
             Par exemple: Un RSSI et/ou un Délégué à la protection des données (DPO) qui doivent pouvoir avoir tous les droits de lecture/écriture ainsi qu'un droit de gestion des Utilisateurs / Consultant.\newline
             Le RSSI et le DPO gèrent conjointement le projet de mise en conformité au RGPD au sein d'un organisme.\newline
             Si aucun des deux acteurs n'est nommé au sein d'un organisme et n'a pas vocation à être nommé, il est recommandé de désigner un "Référent données personnelles" ayant en charge le projet de mise en conformité.
+        \newpage
         \subsubsection{Utilisateurs}
             Par exemple : Le directeur/directrice du service communication de l'organisme qui souhaite créer une newsletter en lien avec les clients de l'organisme ou des prospects ayant consenti sur le site internet de l'organisme.\newline
             Cette newsletter nécessite le consentement des clients et doit apparaître au registre des traitements.\newline
@@ -201,5 +203,4 @@
             Un consultant est une personne qui n'a que des droits de lecture sur le registre ou le consentement.\newline
             Par exemple: Une personne du service communication qui doit suivre les consentement sans avoir besoin de les modifier.\newline
             Ou encore: Une stagiaire qui a besoin d'y accéder pour travailler mais n'a pas soit la responsabilité nécessaire, soit le besoin de bénéficier d'un droit d'écriture.\newline
-    \makeutbmbackcover{}
 \end{document}
