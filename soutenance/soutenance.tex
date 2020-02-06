@@ -1,10 +1,12 @@
 %!TEX program = xelatex
-% not lualatex because of a pgf bug: https://sourceforge.net/p/pgf/bugs/384/
-%\documentclass{beamer}
 \documentclass[aspectratio=169]{beamer}
 \usepackage[T1]{fontenc}
 \usepackage{hyphenat}
 \usepackage{geometry}
+\usepackage{overpic}
+\usepackage{tikz}
+
+\usetikzlibrary{arrows, positioning}
 
 %----------------------------------------
 % Theme
@@ -41,98 +43,101 @@
 % Document
 %----------------------------------------
 \begin{document}
-	\begin{frame}[plain,noframenumbering]
-		\titlepage
-	\end{frame}
-	\begin{frame}
-		\frametitle{Contexte}
-		\framesubtitle{Entreprise}
-        \begin{columns}
-            \hfill
-            \begin{column}{0.45\textwidth}
-                \begin{center}
-                    \hfill\includegraphics[width=1.0\textwidth]{versusmind.png}
-                \end{center}
-                \hfill \color{gray} Cabinet d'architecture numérique   
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \begin{center}
-                    \includegraphics[width=1.0\textwidth]{strasbourg.png}
-                \end{center}
-            \end{column}
-        \end{columns}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Contexte}
-		\framesubtitle{RGPD}
-        \begin{center}
-            Règlement Général sur la Protection des Données
-        \end{center}
-        \begin{columns}
-            \hfill
-            \begin{column}{0.45\textwidth}
-                \begin{enumerate}
-                    \item Uniformiser la réglementation au niveau européen
-                    \item Responsabiliser les entreprises
-                    \item Renforcer les droits des personnes
-                \end{enumerate}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \begin{center}
-                    \includegraphics[width=1.0\textwidth]{RGPD.jpg}
-                \end{center}
-            \end{column}
-        \end{columns}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Contexte}
-        \framesubtitle{Central Consent Manager (CCM)}
-        \begin{center}
-            \includegraphics[width=0.4\textwidth]{ccm_.png}
-        \end{center}
-        \begin{columns}
-            \hfill
-            \begin{column}{0.45\textwidth}
-                \begin{enumerate}
-                    \item Requête sur le service de mentions pour un traitement
-                    \item Envoi des mentions d'informations
-                    \item Demande de consentement
-                    \item Confirmation
-                    \item Enregistrement du consentement
-                \end{enumerate}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \begin{center}
-                    \includegraphics[width=1.0\textwidth]{ccm.png}
-                \end{center}
-            \end{column}
-        \end{columns}
-	\end{frame}
-	\begin{frame}
-		\frametitle{Contexte}
-        \framesubtitle{Central Consent Manager (CCM)}
-        \begin{center}
-            \includegraphics[width=0.4\textwidth]{ccm_.png}
-        \end{center}
-        \begin{columns}
-            \hfill
-            \begin{column}{0.45\textwidth}
-                \begin{enumerate}
-                    \item Requête sur le service de mentions pour un traitement
-                    \item Envoi des mentions d'informations
-                    \item Demande de consentement
-                    \item Confirmation
-                    \item Enregistrement du consentement
-                \end{enumerate}
-            \end{column}
-            \begin{column}{0.5\textwidth}
-                \begin{center}
-                    \includegraphics[width=1.0\textwidth]{ccm.png}
-                \end{center}
-            \end{column}
-        \end{columns}
-	\end{frame}
-	\begin{frame}[plain,noframenumbering]
-		\utbmclosingframe{Thanks}
-	\end{frame}
+\begin{frame}[plain,noframenumbering]
+    \titlepage{}
+\end{frame}
+\begin{frame}
+    \frametitle{Contexte}
+    \framesubtitle{Entreprise}
+    \begin{columns}
+        \hfill
+        \begin{column}{0.45\textwidth}
+            \begin{center}
+                \hfill\includegraphics[width=1.0\textwidth]{versusmind.png}
+            \end{center}
+            \hfill \color{gray} Cabinet d'architecture numérique   
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=1.0\textwidth]{strasbourg.png}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Contexte}
+    \framesubtitle{RGPD}
+    \begin{center}
+        Règlement Général sur la Protection des Données
+    \end{center}
+    \begin{columns}
+        \hfill
+        \begin{column}{0.45\textwidth}
+            \begin{enumerate}
+                \item Uniformiser la réglementation au niveau européen
+                \item Responsabiliser les entreprises
+                \item Renforcer les droits des personnes
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=1.0\textwidth]{RGPD.jpg}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Contexte}
+    \framesubtitle{Central Consent Manager (CCM)}
+    \begin{center}
+        \includegraphics[width=0.4\textwidth]{ccm_.png}
+    \end{center}
+    \begin{columns}
+        \hfill
+        \begin{column}{0.45\textwidth}
+            \begin{enumerate}
+                \item Requête sur le service de mentions pour un traitement
+                \item Envoi des mentions d'informations
+                \item Demande de consentement
+                \item Confirmation
+                \item Enregistrement du consentement
+            \end{enumerate}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=1.0\textwidth]{ccm.png}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Architecture}
+    \framesubtitle{}
+    \begin{center}
+        \begin{tikzpicture}
+            % nodes
+            \node (api) at (1, 1.8) {\includegraphics[width=0.1\textwidth]{website.png}};
+            \node [above=0 of api] {API};
+            \node (front) at (1, -1.8) {\begin{overpic}[width=0.1\textwidth]{website.png}
+                    \put(60, -30){\includegraphics[scale=.08]{ccm_logo.png}}
+                \end{overpic}};
+            \node [above=0 of front] {Front-end};
+            \node (back) at (6, 0) {\includegraphics[width=0.1\textwidth]{server.png}};
+            \node [above=0 of back] {Back-end};
+            \node (function) at (12, 1.8) {\includegraphics[width=0.1\textwidth]{cloud.png}};
+            \node [above=0 of function] {Azure Function};
+            \node (ejbca) at (12, -2) {\includegraphics[width=0.2\textwidth]{ejbca.png}};
+
+            % arrows
+            \draw[ultra thick, ->,>=stealth] (api) -- (back);
+            \draw[ultra thick, ->,>=stealth] (front) -- (back);
+            \draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function);
+            \draw[ultra thick, ->,>=stealth] (function) -- (ejbca);
+
+        \end{tikzpicture}
+    \end{center}
+\end{frame}
+\begin{frame}[plain,noframenumbering]
+    \utbmclosingframe{Thanks}
+\end{frame}
 \end{document}
