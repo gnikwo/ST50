@@ -46,6 +46,11 @@
 \begin{frame}[plain,noframenumbering]
     \titlepage{}
 \end{frame}
+\begin{frame}{Sommaire}
+    \tableofcontents
+\end{frame}
+
+\section{Contexte}
 \begin{frame}
     \frametitle{Contexte}
     \framesubtitle{Entreprise}
@@ -74,14 +79,14 @@
         \hfill
         \begin{column}{0.45\textwidth}
             \begin{enumerate}
-                \item Uniformiser la réglementation au niveau européen
-                \item Responsabiliser les entreprises
-                \item Renforcer les droits des personnes
+                \item<1-> Uniformiser la réglementation au niveau européen
+                \item<2-> Responsabiliser les entreprises
+                \item<3-> Renforcer les droits des personnes
             \end{enumerate}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{center}
-                \includegraphics[width=1.0\textwidth]{RGPD.jpg}
+                \onslide<1->\includegraphics[width=1.0\textwidth]{RGPD.jpg}
             \end{center}
         \end{column}
     \end{columns}
@@ -96,22 +101,43 @@
         \hfill
         \begin{column}{0.45\textwidth}
             \begin{enumerate}
-                \item Requête sur le service de mentions pour un traitement
-                \item Envoi des mentions d'informations
-                \item Demande de consentement
-                \item Confirmation
-                \item Enregistrement du consentement
+                \item<1-> Requête sur le service de mentions pour un traitement
+                \item<2-> Envoi des mentions d'informations
+                \item<3-> Demande de consentement
+                \item<4-> Confirmation
+                \item<5-> Enregistrement du consentement
             \end{enumerate}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{center}
-                \includegraphics[width=1.0\textwidth]{ccm.png}
+                \onslide<1->\includegraphics[width=1.0\textwidth]{ccm.png}
             \end{center}
         \end{column}
     \end{columns}
 \end{frame}
+
+\section{Refonte graphique}
 \begin{frame}
-    \frametitle{Architecture}
+    \frametitle{Refonte graphique}
+    \framesubtitle{}
+    \begin{columns}
+        \hfill
+        \begin{column}{0.45\textwidth}
+            \begin{center}
+                \includegraphics[width=1.0\textwidth]{CSS_HTML.png}
+            \end{center}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=1.0\textwidth]{code.jpg}
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Optimisation}
+\begin{frame}
+    \frametitle{Optimisation}
     \framesubtitle{}
     \begin{center}
         \begin{tikzpicture}
@@ -124,20 +150,32 @@
             \node [above=0 of front] {Front-end};
             \node (back) at (6, 0) {\includegraphics[width=0.1\textwidth]{server.png}};
             \node [above=0 of back] {Back-end};
-            \node (function) at (12, 1.8) {\includegraphics[width=0.1\textwidth]{cloud.png}};
-            \node [above=0 of function] {Azure Function};
-            \node (ejbca) at (12, -2) {\includegraphics[width=0.2\textwidth]{ejbca.png}};
+            \onslide<2>\node (function) at (12, 1.8) {\includegraphics[width=0.1\textwidth]{cloud.png}};
+            \onslide<2>\node [above=0 of function] {Azure Function};
+            \onslide<1-2>\node (ejbca) at (12, -2) {\includegraphics[width=0.2\textwidth]{ejbca.png}};
 
             % arrows
-            \draw[ultra thick, ->,>=stealth] (api) -- (back);
-            \draw[ultra thick, ->,>=stealth] (front) -- (back);
-            \draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function);
-            \draw[ultra thick, ->,>=stealth] (function) -- (ejbca);
+            \onslide<1-2>\draw[ultra thick, ->,>=stealth] (api) -- (back);
+            \onslide<1-2>\draw[ultra thick, ->,>=stealth] (front) -- (back);
+            \onslide<1>\draw[ultra thick, ->,>=stealth] (back) -- (ejbca);
+            \onslide<2>\draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function);
+            \onslide<2>\draw[ultra thick, ->,>=stealth] (function) -- (ejbca);
 
         \end{tikzpicture}
     \end{center}
 \end{frame}
+
+\section{Conclusion}
+\begin{frame}
+    \frametitle{Conclusion}
+    \framesubtitle{}
+    \begin{itemize}
+        \item 
+        \item Cool
+        \item Good CDI
+    \end{itemize}
+\end{frame}
 \begin{frame}[plain,noframenumbering]
-    \utbmclosingframe{Thanks}
+    \utbmclosingframe{Avez vous des questions ?}
 \end{frame}
 \end{document}
