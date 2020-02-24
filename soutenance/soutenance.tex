@@ -36,8 +36,8 @@
 \date[\the\year-\twodigits\month-\twodigits\day]{\today}
 
 % PDF metadata informations
-\keywords{Versusmind \hyp{} RGPD \hyp{} Consentement \hyp{} Signature numérique \hyp{} Cloud Microsoft Azure \newline Méthodologie Scrum \hyp{} Azure DevOps \hyp{} Angular \hyp{} Spring Boot \hyp{} Azure Functions}
-\subject{J'ai pu, durant mon stage de fin d'études à Versusmind (Strasbourg), participer au développement d'un plateforme de recueil de consentement hébergée dans le cloud Microsoft Azure.\newline L'équipe dont j'ai fait partie, utilise la methode agile Scrum. J'ai aidé à terminer une refonte graphique, mais aussi, à faire face à des problèmatiques de montée en charge et d'optimisation. Le tout sur une base de tests d'intégrations à l'aide d'Azure DevOps.}
+\keywords{Versusmind \hyp{} RGPD \hyp{} Consentement \hyp{} Signature numérique \hyp{} Cloud Microsoft Azure \hyp{} Méthodologie Scrum \hyp{} Azure DevOps \hyp{} Angular \hyp{} Spring Boot \hyp{} Azure Functions}
+\subject{J'ai pu, durant mon stage de fin d'études à Versusmind (Strasbourg), participer au développement d'un plateforme de recueil de consentement hébergée dans le cloud Microsoft Azure. L'équipe dont j'ai fait partie, utilise la methode agile Scrum. J'ai aidé à terminer une refonte graphique, mais aussi, à faire face à des problèmatiques de montée en charge et d'optimisation. Le tout sur une base de tests d'intégrations à l'aide d'Azure DevOps.}
 
 %----------------------------------------
 % Document
@@ -50,9 +50,9 @@
     \tableofcontents
 \end{frame}
 
-\section{Contexte}
+\section{Introduction: Contexte}
 \begin{frame}
-    \frametitle{Contexte}
+    \frametitle{Introduction}
     \framesubtitle{Entreprise}
     \begin{columns}
         \hfill
@@ -70,7 +70,7 @@
     \end{columns}
 \end{frame}
 \begin{frame}
-    \frametitle{Contexte}
+    \frametitle{Introduction}
     \framesubtitle{RGPD}
     \begin{center}
         Règlement Général sur la Protection des Données
@@ -92,7 +92,7 @@
     \end{columns}
 \end{frame}
 \begin{frame}
-    \frametitle{Contexte}
+    \frametitle{Introduction}
     \framesubtitle{Central Consent Manager (CCM)}
     \begin{center}
         \includegraphics[width=0.4\textwidth]{ccm_.png}
@@ -116,29 +116,31 @@
     \end{columns}
 \end{frame}
 
-\section{Refonte graphique}
+\section{Déroulé du stage}
 \begin{frame}
-    \frametitle{Refonte graphique}
+    \frametitle{Transition}
     \framesubtitle{}
+    \tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+\end{frame}
+\begin{frame}
+    \frametitle{Déroulé du stage}
+    \framesubtitle{Refonte graphique}
     \begin{columns}
-        \hfill
-        \begin{column}{0.45\textwidth}
+        \begin{column}{0.3\textwidth}
             \begin{center}
                 \includegraphics[width=1.0\textwidth]{CSS_HTML.png}
             \end{center}
         \end{column}
-        \begin{column}{0.5\textwidth}
+        \begin{column}{0.6\textwidth}
             \begin{center}
-                \includegraphics[width=1.0\textwidth]{code.jpg}
+                \includegraphics[width=1.0\textwidth]{ccm_dashboard.png}
             \end{center}
         \end{column}
     \end{columns}
 \end{frame}
-
-\section{Optimisation}
 \begin{frame}
-    \frametitle{Optimisation}
-    \framesubtitle{}
+    \frametitle{Déroulé du stage}
+    \framesubtitle{Optimisation}
     \begin{center}
         \begin{tikzpicture}
             % nodes
@@ -150,29 +152,36 @@
             \node [above=0 of front] {Front-end};
             \node (back) at (6, 0) {\includegraphics[width=0.1\textwidth]{server.png}};
             \node [above=0 of back] {Back-end};
-            \onslide<2>\node (function) at (12, 1.8) {\includegraphics[width=0.1\textwidth]{cloud.png}};
-            \onslide<2>\node [above=0 of function] {Azure Function};
-            \onslide<1-2>\node (ejbca) at (12, -2) {\includegraphics[width=0.2\textwidth]{ejbca.png}};
+            \onslide<2->\node (function) at (12, 1.8) {\includegraphics[width=0.1\textwidth]{cloud.png}};
+            \onslide<2->\node [above=0 of function] {Azure Function};
+            \onslide<1->\node (ejbca) at (12, -2) {\includegraphics[width=0.2\textwidth]{ejbca.png}};
 
             % arrows
-            \onslide<1-2>\draw[ultra thick, ->,>=stealth] (api) -- (back);
-            \onslide<1-2>\draw[ultra thick, ->,>=stealth] (front) -- (back);
+            \onslide<1->\draw[ultra thick, ->,>=stealth] (api) -- (back);
+            \onslide<1->\draw[ultra thick, ->,>=stealth] (front) -- (back);
             \onslide<1>\draw[ultra thick, ->,>=stealth] (back) -- (ejbca);
             \onslide<2>\draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function);
-            \onslide<2>\draw[ultra thick, ->,>=stealth] (function) -- (ejbca);
+            \onslide<3->\draw[ultra thick, double, <->,>=stealth] (back) -- node[near start, below, sloped] {\includegraphics[width=0.05\textwidth]{paquet.png} lots} node[above, sloped] {Service Bus} (function);
+            \onslide<2->\draw[ultra thick, ->,>=stealth] (function) -- (ejbca);
 
         \end{tikzpicture}
     \end{center}
 \end{frame}
 
-\section{Conclusion}
+\section{Conclusion: Ressenti personnel}
 \begin{frame}
-    \frametitle{Conclusion}
+    \frametitle{Transition}
+    \framesubtitle{}
+    \tableofcontents[currentsubsection,sectionstyle=show/shaded,subsectionstyle=show/shaded/hide]
+\end{frame}
+\begin{frame}
+    \frametitle{Ressenti personnel}
     \framesubtitle{}
     \begin{itemize}
-        \item 
-        \item Cool
-        \item Good CDI
+        \item<1-> Pratique d'une methode Agile (Scrum)
+        \item<2-> Familiarisation avec les outils du cloud (intégration continue - applications serverless)
+        \item<3-> Environement de travail et équipe agréable
+        \item<4-> Proposition de CDI en tant que consultant
     \end{itemize}
 \end{frame}
 \begin{frame}[plain,noframenumbering]
