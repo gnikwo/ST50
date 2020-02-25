@@ -20,6 +20,11 @@
 %\useinnertheme[illustration=cover]{utbm}
 %\useoutertheme{utbm}
 %\usecolortheme{utbm}
+%
+\hypersetup{
+    colorlinks=true,% make the links colored
+    linkcolor=blue,
+}
 
 %----------------------------------------
 % Informations
@@ -50,7 +55,7 @@
     \tableofcontents
 \end{frame}
 
-\section{Introduction: Contexte}
+\section{Contexte}
 \begin{frame}
     \frametitle{Introduction}
     \framesubtitle{Entreprise}
@@ -97,20 +102,43 @@
     \begin{center}
         \includegraphics[width=0.4\textwidth]{ccm_.png}
     \end{center}
+    \hfill
     \begin{columns}
-        \hfill
+        \begin{column}{0.45\textwidth}
+            \begin{center}
+                \includegraphics[width=0.2\textwidth]{processing.png}\\
+                Tenir un registre des traitements
+            \end{center}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{center}
+                \includegraphics[width=0.2\textwidth]{consent.png}\\
+                Stocker des consentements
+            \end{center}
+        \end{column}
+    \end{columns}
+\end{frame}
+\begin{frame}
+    \frametitle{Introduction}
+    \framesubtitle{Central Consent Manager (CCM)}
+    \begin{columns}
         \begin{column}{0.45\textwidth}
             \begin{enumerate}
-                \item<1-> Requête sur le service de mentions pour un traitement
-                \item<2-> Envoi des mentions d'informations
-                \item<3-> Demande de consentement
-                \item<4-> Confirmation
-                \item<5-> Enregistrement du consentement
+                \item<2-> Requête sur le service de mentions pour un traitement
+                \item<3-> Envoi des mentions d'informations
+                \item<4-> Demande de consentement
+                \item<5-> Confirmation
+                \item<6-> Enregistrement du consentement
             \end{enumerate}
         \end{column}
         \begin{column}{0.5\textwidth}
             \begin{center}
-                \onslide<1->\includegraphics[width=1.0\textwidth]{ccm.png}
+                \only<1>{\includegraphics[width=1.0\textwidth]{ccm.png}\\}
+                \only<2>{\includegraphics[width=1.0\textwidth]{ccm1.png}\\}
+                \only<3>{\includegraphics[width=1.0\textwidth]{ccm2.png}\\}
+                \only<4>{\includegraphics[width=1.0\textwidth]{ccm3.png}\\}
+                \only<5>{\includegraphics[width=1.0\textwidth]{ccm4.png}\\}
+                \only<6>{\includegraphics[width=1.0\textwidth]{ccm5.png}\\}
             \end{center}
         \end{column}
     \end{columns}
@@ -127,13 +155,16 @@
     \framesubtitle{Refonte graphique}
     \begin{columns}
         \begin{column}{0.3\textwidth}
-            \begin{center}
-                \includegraphics[width=1.0\textwidth]{CSS_HTML.png}
-            \end{center}
+            \begin{itemize}
+                \item<1->
+                \item<2->
+                \item<3->
+                \item<4->
+            \end{itemize}
         \end{column}
         \begin{column}{0.6\textwidth}
             \begin{center}
-                \includegraphics[width=1.0\textwidth]{ccm_dashboard.png}
+                \fbox{\includegraphics[width=1.0\textwidth]{ccm_dashboard.png}}
             \end{center}
         \end{column}
     \end{columns}
@@ -152,23 +183,23 @@
             \node [above=0 of front] {Front-end};
             \node (back) at (6, 0) {\includegraphics[width=0.1\textwidth]{server.png}};
             \node [above=0 of back] {Back-end};
-            \onslide<2->\node (function) at (12, 1.8) {\includegraphics[width=0.1\textwidth]{cloud.png}};
-            \onslide<2->\node [above=0 of function] {Azure Function};
-            \onslide<1->\node (ejbca) at (12, -2) {\includegraphics[width=0.2\textwidth]{ejbca.png}};
+            \node (function) at (12, 1.8) {\only<2->{\includegraphics[width=0.1\textwidth]{cloud.png}}};
+            \node [above=0 of function] {\only<2->{Azure Function}};
+            \node (ejbca) at (12, -2) {\only<1->{\includegraphics[width=0.2\textwidth]{ejbca.png}}};
 
             % arrows
-            \onslide<1->\draw[ultra thick, ->,>=stealth] (api) -- (back);
-            \onslide<1->\draw[ultra thick, ->,>=stealth] (front) -- (back);
-            \onslide<1>\draw[ultra thick, ->,>=stealth] (back) -- (ejbca);
-            \onslide<2>\draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function);
-            \onslide<3->\draw[ultra thick, double, <->,>=stealth] (back) -- node[near start, below, sloped] {\includegraphics[width=0.05\textwidth]{paquet.png} lots} node[above, sloped] {Service Bus} (function);
-            \onslide<2->\draw[ultra thick, ->,>=stealth] (function) -- (ejbca);
+            \only<1->{\draw[ultra thick, ->,>=stealth] (api) -- (back)};
+            \only<1->{\draw[ultra thick, ->,>=stealth] (front) -- (back)};
+            \only<1>{\draw[ultra thick, ->,>=stealth] (back) -- (ejbca)};
+            \only<2>{\draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function)};
+            \only<3->{\draw[ultra thick, double, <->,>=stealth] (back) -- node[near start, below, sloped] {\includegraphics[width=0.05\textwidth]{paquet.png} lots} node[above, sloped] {Service Bus} (function)};
+            \only<2->{\draw[ultra thick, ->,>=stealth] (function) -- (ejbca)};
 
         \end{tikzpicture}
     \end{center}
 \end{frame}
 
-\section{Conclusion: Ressenti personnel}
+\section{Ressenti personnel}
 \begin{frame}
     \frametitle{Transition}
     \framesubtitle{}
@@ -178,9 +209,9 @@
     \frametitle{Ressenti personnel}
     \framesubtitle{}
     \begin{itemize}
-        \item<1-> Pratique d'une methode Agile (Scrum)
-        \item<2-> Familiarisation avec les outils du cloud (intégration continue - applications serverless)
-        \item<3-> Environement de travail et équipe agréable
+        \item<1-> Pratique d'une méthode Agile (Scrum)
+        \item<2-> Familiarisation avec les outils DevOps et le cloud Azure
+        \item<3-> Environnement de travail et équipe agréable
         \item<4-> Proposition de CDI en tant que consultant
     \end{itemize}
 \end{frame}
