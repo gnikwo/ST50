@@ -5,6 +5,8 @@
 \usepackage{geometry}
 \usepackage{overpic}
 \usepackage{tikz}
+\usepackage{ulem}
+\usepackage[export]{adjustbox}
 
 \usetikzlibrary{arrows, positioning}
 
@@ -51,7 +53,8 @@
 \begin{frame}[plain,noframenumbering]
     \titlepage{}
 \end{frame}
-\begin{frame}{Sommaire}
+\begin{frame}[noframenumbering]
+    \frametitle{Sommaire}
     \tableofcontents
 \end{frame}
 
@@ -61,16 +64,26 @@
     \framesubtitle{Entreprise}
     \begin{columns}
         \hfill
-        \begin{column}{0.45\textwidth}
-            \begin{center}
-                \hfill\includegraphics[width=1.0\textwidth]{versusmind.png}
-            \end{center}
-            \hfill \color{gray} Cabinet d'architecture numérique   
+        \begin{column}{.45\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \includegraphics[width=.8\textwidth]{versusmind.png}
+                \end{center}
+                \begin{center}
+                    \color{gray} Cabinet d'architecture numérique\\
+                    \scriptsize\color{gray}Nancy \hyp{} Metz \hyp{} Luxembourg \hyp{} Paris \hyp{} Strasbourg
+                \end{center}
+                \includegraphics[width=.62\textwidth]{versusconsulting.png}
+                \includegraphics[width=.65\textwidth, right]{versusxperience.png}
+                \includegraphics[width=.55\textwidth]{versusinstitute.png}
+            }
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{center}
-                \includegraphics[width=1.0\textwidth]{strasbourg.png}
-            \end{center}
+        \begin{column}{.5\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \frame{\includegraphics[width=1.0\textwidth]{strasbourg.png}}
+                \end{center}
+            }
         \end{column}
     \end{columns}
 \end{frame}
@@ -81,40 +94,49 @@
         Règlement Général sur la Protection des Données
     \end{center}
     \begin{columns}
-        \hfill
-        \begin{column}{0.45\textwidth}
-            \begin{enumerate}
-                \item<1-> Uniformiser la réglementation au niveau européen
-                \item<2-> Responsabiliser les entreprises
-                \item<3-> Renforcer les droits des personnes
-            \end{enumerate}
+        \begin{column}{.45\textwidth}
+            \parbox[c][0.6\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \begin{enumerate}
+                        \item<2-> Uniformiser la réglementation au niveau européen
+                        \item<3-> Responsabiliser les entreprises
+                        \item<4-> Renforcer les droits des personnes
+                    \end{enumerate}
+                \end{center}
+            }
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{center}
-                \onslide<1->\includegraphics[width=1.0\textwidth]{RGPD.jpg}
-            \end{center}
+        \begin{column}{.5\textwidth}
+            \parbox[c][0.6\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \only<1->{\includegraphics[width=1.0\textwidth]{RGPD.jpg}}
+                \end{center}
+            }
         \end{column}
     \end{columns}
 \end{frame}
 \begin{frame}
     \frametitle{Introduction}
     \framesubtitle{Central Consent Manager (CCM)}
-    \begin{center}
-        \includegraphics[width=0.4\textwidth]{ccm_.png}
-    \end{center}
     \hfill
+    \begin{center}
+        \onslide<2->{\includegraphics[width=.4\textwidth]{ccm_.png}}
+    \end{center}
     \begin{columns}
-        \begin{column}{0.45\textwidth}
-            \begin{center}
-                \includegraphics[width=0.2\textwidth]{processing.png}\\
-                Tenir un registre des traitements
-            \end{center}
+        \begin{column}{.45\textwidth}
+            \parbox[c][0.5\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \includegraphics[width=.2\textwidth]{processing.png}\\
+                    Tenir un registre des traitements de données personnelles
+                \end{center}
+            }
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{center}
-                \includegraphics[width=0.2\textwidth]{consent.png}\\
-                Stocker des consentements
-            \end{center}
+        \begin{column}{.45\textwidth}
+            \parbox[c][0.5\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \includegraphics[width=.2\textwidth]{consent.png}\\
+                    Stocker les consentements
+                \end{center}
+            }
         \end{column}
     \end{columns}
 \end{frame}
@@ -122,24 +144,30 @@
     \frametitle{Introduction}
     \framesubtitle{Central Consent Manager (CCM)}
     \begin{columns}
-        \begin{column}{0.45\textwidth}
-            \begin{enumerate}
-                \item<2-> Requête sur le service de mentions pour un traitement
-                \item<3-> Envoi des mentions d'informations
-                \item<4-> Demande de consentement
-                \item<5-> Confirmation
-                \item<6-> Enregistrement du consentement
-            \end{enumerate}
+        \begin{column}{.45\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \begin{enumerate}
+                        \item<2-> Requête sur les informations d'un traitement
+                        \item<3-> Envoi des informations du traitement
+                        \item<4-> Demande de consentement
+                        \item<5-> Confirmation
+                        \item<6-> Enregistrement du consentement
+                    \end{enumerate}
+                \end{center}
+            }
         \end{column}
-        \begin{column}{0.5\textwidth}
-            \begin{center}
-                \only<1>{\includegraphics[width=1.0\textwidth]{ccm.png}\\}
-                \only<2>{\includegraphics[width=1.0\textwidth]{ccm1.png}\\}
-                \only<3>{\includegraphics[width=1.0\textwidth]{ccm2.png}\\}
-                \only<4>{\includegraphics[width=1.0\textwidth]{ccm3.png}\\}
-                \only<5>{\includegraphics[width=1.0\textwidth]{ccm4.png}\\}
-                \only<6>{\includegraphics[width=1.0\textwidth]{ccm5.png}\\}
-            \end{center}
+        \begin{column}{.5\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \only<1>{\includegraphics[width=1.0\textwidth]{ccm.png}\\}
+                    \only<2>{\includegraphics[width=1.0\textwidth]{ccm1.png}\\}
+                    \only<3>{\includegraphics[width=1.0\textwidth]{ccm2.png}\\}
+                    \only<4>{\includegraphics[width=1.0\textwidth]{ccm3.png}\\}
+                    \only<5>{\includegraphics[width=1.0\textwidth]{ccm4.png}\\}
+                    \only<6>{\includegraphics[width=1.0\textwidth]{ccm5.png}\\}
+                \end{center}
+            }
         \end{column}
     \end{columns}
 \end{frame}
@@ -154,18 +182,23 @@
     \frametitle{Déroulé du stage}
     \framesubtitle{Refonte graphique}
     \begin{columns}
-        \begin{column}{0.3\textwidth}
-            \begin{itemize}
-                \item<1->
-                \item<2->
-                \item<3->
-                \item<4->
-            \end{itemize}
+        \begin{column}{.4\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \begin{itemize}
+                        \item<2-> Redéfinition de l'expérience utilisateur
+                        \item<3-> Unification de la charte graphique
+                    \end{itemize}
+                \end{center}
+            }
         \end{column}
-        \begin{column}{0.6\textwidth}
-            \begin{center}
-                \fbox{\includegraphics[width=1.0\textwidth]{ccm_dashboard.png}}
-            \end{center}
+        \begin{column}{.55\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \only<1-2>{\frame{\includegraphics[width=1.0\textwidth]{dashboard.png}}}
+                    \only<3>{\frame{\includegraphics[width=1.0\textwidth]{consent_list.png}}}
+                \end{center}
+            }
         \end{column}
     \end{columns}
 \end{frame}
@@ -175,25 +208,30 @@
     \begin{center}
         \begin{tikzpicture}
             % nodes
-            \node (api) at (1, 1.8) {\includegraphics[width=0.1\textwidth]{website.png}};
+            \node (api) at (1, 1.8) {\includegraphics[width=.1\textwidth]{website.png}};
             \node [above=0 of api] {API};
-            \node (front) at (1, -1.8) {\begin{overpic}[width=0.1\textwidth]{website.png}
+            \node (front) at (1, -1.8) {\begin{overpic}[width=.1\textwidth]{website.png}
                     \put(60, -30){\includegraphics[scale=.08]{ccm_logo.png}}
                 \end{overpic}};
             \node [above=0 of front] {Front-end};
-            \node (back) at (6, 0) {\includegraphics[width=0.1\textwidth]{server.png}};
+            \node (back) at (6, 0) {\includegraphics[width=.1\textwidth]{server.png}};
             \node [above=0 of back] {Back-end};
-            \node (function) at (12, 1.8) {\only<2->{\includegraphics[width=0.1\textwidth]{cloud.png}}};
-            \node [above=0 of function] {\only<2->{Azure Function}};
-            \node (ejbca) at (12, -2) {\only<1->{\includegraphics[width=0.2\textwidth]{ejbca.png}}};
+            \node (function) at (12, 1.8) {\only<3->{\includegraphics[width=.1\textwidth]{cloud.png}}};
+            \node [above=0 of function] {\only<3->{Azure Function}};
+            \node (ejbca) at (12, -2) {\includegraphics[width=.2\textwidth]{ejbca.png}};
+            \node (stats1) at (6, -1.7) {
+                \only<2-4>{1M de consentements = 3 jours}
+                \only<5->{\sout{1M de consentements = 3 jours}}
+            };
+            \node (stats2) at (6, -2.3) {\only<5->{1M de consentements = 40 minutes}};
 
             % arrows
             \only<1->{\draw[ultra thick, ->,>=stealth] (api) -- (back)};
             \only<1->{\draw[ultra thick, ->,>=stealth] (front) -- (back)};
-            \only<1>{\draw[ultra thick, ->,>=stealth] (back) -- (ejbca)};
-            \only<2>{\draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function)};
-            \only<3->{\draw[ultra thick, double, <->,>=stealth] (back) -- node[near start, below, sloped] {\includegraphics[width=0.05\textwidth]{paquet.png} lots} node[above, sloped] {Service Bus} (function)};
-            \only<2->{\draw[ultra thick, ->,>=stealth] (function) -- (ejbca)};
+            \only<1-2>{\draw[ultra thick, ->,>=stealth] (back) -- (ejbca)};
+            \only<3>{\draw[ultra thick, double, <->,>=stealth] (back) -- node[above, sloped] {Service Bus} (function)};
+            \only<4->{\draw[ultra thick, double, <->,>=stealth] (back) -- node[near start, below, sloped] {\includegraphics[width=.05\textwidth]{paquet.png} lots} node[above, sloped] {Service Bus} (function)};
+            \only<3->{\draw[ultra thick, ->,>=stealth] (function) -- (ejbca)};
 
         \end{tikzpicture}
     \end{center}
@@ -208,14 +246,32 @@
 \begin{frame}
     \frametitle{Ressenti personnel}
     \framesubtitle{}
-    \begin{itemize}
-        \item<1-> Pratique d'une méthode Agile (Scrum)
-        \item<2-> Familiarisation avec les outils DevOps et le cloud Azure
-        \item<3-> Environnement de travail et équipe agréable
-        \item<4-> Proposition de CDI en tant que consultant
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{.5\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \begin{itemize}
+                        \item<1->{Environnement de travail agréable et équipe conviviale}
+                        \item<2->{Pratique d'une méthode Agile (Scrum)}
+                        \item<3->{Familiarisation avec les outils DevOps et le cloud Azure}
+                        \item<4->{Proposition de CDI en tant que consultant}
+                    \end{itemize}
+                \end{center}
+            }
+        \end{column}
+        \begin{column}{.44\textwidth}
+            \parbox[c][0.8\textheight][c]{\columnwidth}{
+                \begin{center}
+                    \only<1>{\frame{\includegraphics[width=\textwidth]{equipe.jpg}}\\}
+                    \only<2>{\frame{\includegraphics[width=0.5\textwidth]{livre_scrum.jpg}}}
+                    \only<3>{\includegraphics[width=\textwidth]{microsoft-azure.png}\\}
+                    \only<4>{\includegraphics[width=\textwidth]{cdi.png}\\}
+                \end{center}
+            }
+        \end{column}
+    \end{columns}
 \end{frame}
 \begin{frame}[plain,noframenumbering]
-    \utbmclosingframe{Avez vous des questions ?}
+    \utbmclosingframe{Avez vous des questions ?}
 \end{frame}
 \end{document}
