@@ -223,16 +223,7 @@ Cela s'inscrit dans un objectif d'amélioration de l'environnement de travail et
 \tab{} Le non-respect du RGPD peut mener à des sanctions financières importantes ainsi qu'a des sanctions administratives ayant un fort impact sur le fonctionnement de l'entreprise.
 Il est donc important pour les entreprises d'être en conformité avec le RGPD.\newline
 
-Afin de donner une appréciation de l’état de conformité au regard des obligations inhérentes aux principes de protection des données personnelles; Mais aussi d'identifier les risques réglementaires et pour les droits et libertés des personnes
-concernées; Versusmind propose au travers de VersusConsulting, de passer en revue la documentation existante, de vérifier des modalités de recueil du consentement mais aussi de revoir les mentions légales des sites internets. vue du/des sites internets (vérification des mentions légales d’information,
-création d’une politique de gestion des données personnelles / site e-commerce
-site “vitrine”
-4.
-Vérifications
-des
-canaux
-de
-communication
+Afin d'accompagner les entreprises dans leurs
 \TODO{POURQUOI CCM ?}
 
 L'application étant déjà existante lors de mon arrivée, les missions qui m'ont été confiées ont étés: la participation à une refonte graphique, l'ajout de fonctionnalités, mais aussi l'optimisation de l'application CCM.
@@ -291,14 +282,14 @@ Voici un rapide résumé des personnes destinées à utiliser l'application:
 Tout d'abord je vais rapidement expliquer l'architecture du projet.
 La solution CCM est composée de différents éléments:
 \begin{itemize}
-    \item Une partie Font-end écrite en \TODO{Footnotes} HTML/CSS/Typescript avec le framework Angular, c'est le back-office d'administration, il sert les différentes pages web à l'utilisateur.
+    \item Une partie Font-end écrite en HTML\footnote{HyperText Markup Language: langage utilisé pour afficher du contenu dans une page web}/CSS\footnote{Cascading Style Sheet: Langage utilisé afin de créer une mise en page sur le HTML}/Typescript\footnote{Typescript est un sur-ensemble du Javascript, utilisé pour dynamiser des pages web} avec le framework Angular, c'est le back-office d'administration, il sert les différentes pages web à l'utilisateur.
     \item Une partie Back-end écrite en Java avec le framework Spring Boot, c'est le cœur de l'application, elle peut recevoir des requêtes via le Front-end ou directement par API
     \item La gestion du chiffrement est en deux parties
         \begin{itemize}
             \item Une instance EJBCA qui prend le rôle d'autorité de certification
             \item Des Fonctions Azure écrites en Java qui chiffrent et vérifient les consentements. Elles communiquent avec le Back-end via des Service Bus Azure (de simples files d'attentes de messages JSON)
         \end{itemize}
-    \item Une instance Redis \TODO{Footnotes} afin de garder du cache des différentes requêtes faites à la base de données.
+    \item Une instance Redis\footnote{Base de données rapide utilisant la mémoire vive afin de stocker les données} afin de garder du cache des différentes requêtes faites à la base de données.
 \end{itemize}
 \subsection{Outils et environnement de travail}
 \tab{}Les différentes parties du système sont hébergées sur plateforme cloud Microsoft Azure.\newline
@@ -314,7 +305,7 @@ Nous avons aussi utilisé Azure DevOps afin d'informatiser les notions de Sprint
     \caption{Capture d'un Sprint d'Azure DevOps}
 \end{figure}
 
-\tab{}Concernant mon poste de travail, j'ai eu l'agréable surprise de pouvoir travailler avec l'environnement de mon choix et l'IDE \TODO{Footnote} ou éditeur de texte de mon choix. J'ai donc pu installer la distribution Arch Linux ainsi que mes configurations habituelles et cela a grandement participé au confort au quotidien. J'ai développé en utilisant NeoVim (qui est une réécriture de l'éditeur Vim) couplé à un ensemble de modules et notamment le module Conquer of Completion (Coc) qui permet d'utiliser de multiples serveurs de langages dérivés des implémentations utilisées par Visual Studio Code. J'ai donc pu profiter d'une autocomplétion intelligente identique à celle de mes collègues de travail qui utilisent Visual Studio Code.
+\tab{}Concernant mon poste de travail, j'ai eu l'agréable surprise de pouvoir travailler avec l'environnement de mon choix et l'IDE\footnote{Integrated Development Environment: Environment de développement tout-en-un, exemple: Visual Studio} ou éditeur de texte de mon choix. J'ai donc pu installer la distribution Arch Linux ainsi que mes configurations habituelles et cela a grandement participé au confort au quotidien. J'ai développé en utilisant NeoVim (qui est une réécriture de l'éditeur Vim) couplé à un ensemble de modules et notamment le module Conquer of Completion (Coc) qui permet d'utiliser de multiples serveurs de langages dérivés des implémentations utilisées par Visual Studio Code. J'ai donc pu profiter d'une autocomplétion intelligente identique à celle de mes collègues de travail qui utilisent Visual Studio Code.
 
 
 \subsection{Développement du Front-end}
@@ -332,7 +323,7 @@ La mise en place d'un nouveau composant nécessite de définir un certain nombre
     \item Son design visuel : son template\newline
 \end{itemize}
 Mais certaines parties sont plus spécifiques. Comme par exemple la gestion des traductions et la gestion de l'authentification.
-Dans notre projet il existe deux fichiers JSON associant des clés de traductions à des valeurs. Chacun des fichiers comportant les traductions d'une langue précise, par exemple :\newline
+Dans notre projet il existe deux fichiers au format JSON associant des clés de traductions à des valeurs. Chacun des fichiers comportant les traductions d'une langue précise, par exemple :\newline
 En anglais:
 \begin{lstlisting}
 {
