@@ -4,6 +4,7 @@
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{hyperref}
+\usepackage[toc,page]{appendix}
 \usepackage{utbmcovers}
 \usepackage{hyphenat}
 \usepackage[scale=0.75]{geometry}
@@ -140,21 +141,13 @@ RGPD. Dans ce département, le client a l’occasion de mettre en commun sa conn
 l’expertise technique et juridique des consultants de Versusmind. Le panel des offres de
 Versusconsulting est composé d’Audits (de cinq jours environ), d’accompagnement de mise en
 conformité (en six étapes), de mise à disposition de Délégué à la Protection des données (DPO)\newline
-Et dans le cadre de l'accompagnement des entreprises, Versusmind propose la solution CCM.
-
-\section{Central Consent Manager}
-Central Consent Manager ou CCM, est un système de gestion des consentements centralisé. Il
-permet aux entreprises de se libérer d’un poids en s’assurant que ses utilisateurs ont bien consenti à
-l’utilisation de leurs données personnelles en centralisant l’enregistrement et la vérification
-d’authenticité des consentements qui pouvaient être sur des applications et plateformes diverses
-auparavant. L’application CCM permet au client de gérer l’administration des consentements grâce à
-trois fonctionnalités : la consigne de l’ensemble des informations dans un registre, la gestion des
-traitements et la gestion des consentements.\newline
+Et dans le cadre de l'accompagnement des entreprises, Versusmind propose la solution Central Consent Manager.
+Central Consent Manager ou CCM, est un système de gestion des consentements centralisé.\newline
 
 Lors de mon arrivée dans l’entreprise, j’ai intégré l’équipe de développement de CCM en cours de
 saison de refonte graphique, le projet avait été lancé un an plus tôt et n’était pas encore proposé à des
 clients. L’équipe était composée de deux à trois développeurs stables (moi inclus) auxquels s’ajoutaient
-des développeurs temporairement, en attente de projet.
+des développeurs temporairement, en attente de projet.\newline
 Dans une équipe de développeurs qui évolue beaucoup, mon rôle a été d'aider au développement de la plateforme CCM, à sa mise en production et à améliorer ses performances.
 
 \section{L’Environnement de travail}
@@ -223,8 +216,8 @@ Cela s'inscrit dans un objectif d'amélioration de l'environnement de travail et
 \tab{} Le non-respect du RGPD peut mener à des sanctions financières importantes ainsi qu'a des sanctions administratives ayant un fort impact sur le fonctionnement de l'entreprise.
 Il est donc important pour les entreprises d'être en conformité avec le RGPD.\newline
 
-Afin d'accompagner les entreprises dans leurs
-\TODO{POURQUOI CCM ?}
+C'est pourquoi Central Consent Manager permet aux entreprises de se libérer d’un poids en s’assurant que ses utilisateurs ont bien consenti à l’utilisation de leurs données personnelles en centralisant l’enregistrement et la vérification d’authenticité des consentements qui pouvaient être sur des applications et plateformes diverses auparavant.
+L’application CCM permet au client de gérer l’administration des consentements grâce à trois fonctionnalités : la consigne de l’ensemble des informations dans un registre, la gestion des traitements et la gestion des consentements.\newline
 
 L'application étant déjà existante lors de mon arrivée, les missions qui m'ont été confiées ont étés: la participation à une refonte graphique, l'ajout de fonctionnalités, mais aussi l'optimisation de l'application CCM.
 
@@ -347,7 +340,7 @@ J'ai aussi participé à l'amélioration et à l'enrichissement de l'interface s
 \tab{}Tout au long de ma formation, j'ai pu faire de la veille technologique et guider l'équipe vers une restructuration de l'architecture CSS plus maintenable et plus facile à étendre.\newline
 Cela se concrétise par la rédaction d'un guide de bonnes pratiques que les développeurs peuvent consulter lors de la modification, l'extension ou la création d'un composant graphique.
 Afin de rédiger ce guide, j'ai du aussi me baser sur l'architecture existante afin de ne pas viser un but parfait mais inatteignable à cause de la dette technique actuelle.\newline
-J'aborde dans ce guide, la notion de précision en CSS afin d'aider les développeurs à mieux comprendre les conflits qu'ils peuvent rencontrer et d'éviter l'utilisation abusive de la directive "!important". Je propose d'utiliser la convention de nommage BEM, afin de mieux gèrer la précision et la modulatiré de nos règles CSS. J'apporte aussi quelques notes sur l'utilisation de préprocesseurs CSS et de dépendances externes tels que Angular Matérial dans notre cas.\newline
+J'aborde dans ce guide (accessible en annexe \ref{appendix:guide}), la notion de précision en CSS afin d'aider les développeurs à mieux comprendre les conflits qu'ils peuvent rencontrer et d'éviter l'utilisation abusive de la directive "!important". Je propose d'utiliser la convention de nommage BEM, afin de mieux gèrer la précision et la modulatiré de nos règles CSS. J'apporte aussi quelques notes sur l'utilisation de préprocesseurs CSS et de dépendances externes tels que Angular Matérial dans notre cas.\newline
 La rédaction m'a été confiée suite à de multiples phases de relecture de code à plusieurs où mes collègues se sont apercu que j'appréciais le développement de mise en page web. Après plusieurs jours de rédaction, mise au points je l'ai soumis à mes collègues le 13 Janvier, il a pu être relu et discuté par l'équipe et après quelques clarifications a été validé dans la journée.\newline
 
 Voici plusieurs captures d'écran prises à la suite de la refonte graphique, mon guide ayant servi à son développement:
@@ -539,7 +532,7 @@ J'ai aussi appris à développer des tests de charge et à interpréter leurs r�
 En définitive, même si le développement web n'est pas mon domaine de prédilection, j'ai eu la chance d'utiliser de nombreux outils open source et cela m'a permis de confirmer ma volonté de participer au monde du logiciel libre.
 J'ai vécu une belle expérience durant ce stage et j'ai la chance de pouvoir rester au près de Versusmind et de continuer à approfondir des sujets qui me tiennent à cœur.
 
-\appendix
+\begin{appendix}
 \chapter{Personas}
 Les différents rôles dans l'application:
 
@@ -566,6 +559,7 @@ Par exemple: Une personne du service communication qui doit suivre les consentem
 Ou encore: Une stagiaire qui a besoin d'y accéder pour travailler mais n'a pas soit la responsabilité nécessaire, soit le besoin de bénéficier d'un droit d'écriture.\newline
 
 \chapter{Guide CSS}
+\label{appendix:guide}
 
 \subsection{Et si ca devenait agréable de faire du CSS ?}
 
@@ -862,6 +856,7 @@ Et enfin nous avons vu comment documenter nos classes CSS pour s'y retrouver et 
 
 Si vous étiez fachés avec le CSS et que vous êtes arrivés jusqu'ici, déjà bravo, et j'espère vous avoir au moins un peu réconcilié avec ce language.
 Sinon j'espère vous avoir quand même apporté quelque chose au travers de cet article.
+\end{appendix}
 
 \listoffigures
 \makeutbmbackcover{}
