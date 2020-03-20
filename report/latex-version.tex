@@ -66,13 +66,13 @@ Francois Simond et Ahmed Zahri, qui ne faisaient pas partie de mon équipe et qu
 \newpage
 \tableofcontents
 \chapter{Introduction}
-Du 2 Septembre au 7 Février, j'ai effectué un stage au sein de l'agence Strasbourgeoise de l'entreprise Versusmind.\newline
+Du 2 Septembre 2019 au 7 Février 2020, j'ai effectué un stage au sein de l'agence Strasbourgeoise de l'entreprise Versusmind.\newline
 Versusmind est un cabinet d'architecture numérique spécialisé dans l'expertise et l'accompagnement des entreprises et de leurs solutions digitales.\newline
 Je me suis intéressé à cette entreprise car je désirais appréhender la gestion du développement en équipe dans un cadre professionnel.
 Aussi, le métier de consultant représente bien les valeurs qui m'ont poussé à choisir la filière libre.\newline
 Au cours de ce stage j'ai pu m'intéresser au développement assisté par les services clouds ainsi qu'aux méthodes Agiles.\newline
 Mon stage dans l'équipe de développement Central Consent Manager (CCM) a consisté en l'extension, l'amélioration et l'optimisation de la plateforme.\newline
-Afin de présenter le travail que j'ai fourni, je vais commencer par la présentation du groupe Versusmind, ses valeurs et ses départements, puis je vais expliciter ma mission et le contexte dans lequel elle s'inscrit, pour enfin conclure.
+Afin de présenter le travail que j'ai fourni, je vais commencer par la présentation du groupe Versusmind, ses valeurs et ses départements, puis je vais expliciter ma mission et le contexte dans lequel elle s'inscrit, pour enfin conclure sur mon expérience au sein de ce stage.
 \chapter{Présentation de l’Entreprise}
 \section{Le groupe Versusmind}
 \begin{figure}[H]
@@ -150,7 +150,7 @@ des développeurs temporairement, en attente de projet.
 Dans une équipe de développeurs qui évolue beaucoup, mon rôle a été d'aider au développement de la plateforme CCM, à sa mise en production et à améliorer ses performances.
 
 
-\section{L’Environnement de travail (culture, évènements d’entreprise...)}
+\section{L’Environnement de travail}
 \tab{}Versusmind s’applique à créer une culture d’entreprise autour des valeurs d’échange, du partage,
 d’entraide et de la curiosité. La « Versusfamily » communique fréquemment en ligne sur plusieurs
 applications : lumapps, par mails, et sur Microsoft Teams.\newline
@@ -173,7 +173,7 @@ même ceux qui sont mobilisés chez des clients.\newline
 
 Cet environnement de travail a eu beaucoup de poids lorsqu’il m’a fallut choisir mon stage de fin d'études.
 
-\chapter{Méthodologie de travail}
+\chapter{Méthodologie de travail agile}
 J'ai été intégré durant mon stage à une équipe utilisant la méthodologie Scrum, qui fait partie des méthodes de gestion de projet agiles. Les methodes agiles visent à supprimer ou au moins à réduire l'effet tunnel d'une méthode de gestion classique par exemple le Cycle en V.\newline
 Le développement est découpé en cycles (de trois semaines dans le cas présent) appellés ``Sprint``.\newline
 Les Sprints sont regroupés en saisons afin de représenter un objectif général.
@@ -188,20 +188,20 @@ Le Projet Owner est un membre à part entière de l’équipe Scrum dont la resp
     \end{center}
     \caption{Cycle de développement Scrum}
 \end{figure}
-\subsection{Réunions journalières (Daily)}
+\section{Réunions journalières (Daily)}
 Chaque matin nous avons une petite réunion qui ne doit pas dépasser 15min afin d'informer rapidement le reste de l'équipe de l'avancement des différentes taches, de discuter brièvement des différents problèmes rencontrés mais aussi de choisir ensemble la priorité des différentes taches qu'il reste à faire.\newline
 Cela permet de toujours rester conscient de l'état du projet et d'avoir une vision d'ensemble du travail accompli et du travail restant.
-\subsection{Réunions inter-Sprints}
+\section{Réunions inter-Sprints}
 Entre chaque Sprint, une série de réunions nous permet de rester dans la bonne direction concernant le développement du projet.
-\subsubsection{Revue de Sprint}
+\subsection{Revue de Sprint}
 Le but de la revue de Sprint est de montrer à toutes les parties prenantes (Project Owner, Scrum Master, développeurs) l'avancement du projet pendant le dernier Sprint.\newline
 L'équipe de développeurs décrit le travail accompli et après une démonstration du résultat, on discute afin de peut-être corriger la direction à prendre pour le prochain Sprint.
-\subsubsection{Planification}
+\subsection{Planification}
 S'en suit la planification, elle se fait avec le Scrum Master ainsi que les développeurs.\newline
 On va y sélectionner les User Stories à implémenter durant le prochain Sprint. Cela constituera ce qu'on appelle ``L'objectif de Sprint``.\newline
 Sous forme d'un nombre on va se mettre d'accord sur une complexité pour chaque User Stories. Cela permet de vérifier qu'on en à bien la même compréhension. Si je propose 1 (facile) et qu'un de mes collègue propose 4 (moyen), c'est que l'un de nous deux à mal compris ce qui est attendu.\newline
 Ensuite on découpe chaque User Stories en taches concrètes et enfin on estime le temps de travail sur chaque taches.
-\subsubsection{Rétrospective}
+\subsection{Rétrospective}
 Et enfin, encore une fois avec le Scrum Master ainsi que les développeurs, on discute de comment s'est déroulé le dernier Sprint, des pratiques qu'on pourrait mettre en place ou améliorer, mais aussi de comment on l'a vécu et ressenti.\newline
 Cela s'inscrit dans un objectif d'amélioration de l'environnement de travail et de l'efficacité.
 
@@ -397,7 +397,7 @@ Afin de sécuriser les mots de passe nous avons utilisé les KeyVault d'Azure. I
     \item Un client doit pouvoir exporter cette base sous forme de fichier, ce qui implique une vérification de validité d'un grand nombre de consentements.
 \end{itemize}
 
-Suite à des tests de charge, nous avons observé qu'il faudrait environ trois jours pour importer une base d'un million de consentements et plusieurs heures pour générer un export des consentements enregistrés, ce qui n'était pas acceptable.\newpage
+Suite à des tests de charge, nous avons observé qu'il faudrait environ trois jours pour importer une base d'un million de consentements et plusieurs heures pour générer un export des consentements enregistrés, ce qui n'était pas acceptable.\newline
 Nos tests de charges sont effectués pour la plupart avec l'outil open source Gatling, qui simule une multitude de connexion simultanées et indépendantes afin de représenter une population d'utilisateurs.\newline
 
 Afin de résoudre ce problème, nous avons mis en place des fonctions Azure ainsi qu'optimisé la vérification des consentements.
@@ -510,7 +510,7 @@ Cela contribue à rendre le code plus stable et plus maintenable.\newline
 Voici une capture de l'interface de SonarQube:
 \begin{figure}[H]
     \begin{center}
-        \includegraphics[width=0.5\linewidth]{sonarqube.png}
+        \includegraphics[width=\linewidth]{sonarqube.png}
     \end{center}
     \caption{Interface de SonarQube}
 \end{figure}
